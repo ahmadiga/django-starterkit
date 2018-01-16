@@ -46,7 +46,7 @@ INSTALLED_APPS += [
     'djangobower',
     'crispy_forms',
     'channels',
-    'sit_builder',
+    'django_generator',
     'parsley',
     'allauth',
     'allauth.account',
@@ -64,7 +64,6 @@ if DEBUG_TOOLBAR_ENABLED:
 
 # my apps
 INSTALLED_APPS += [
-    'chat',
 ]
 
 MIDDLEWARE = [

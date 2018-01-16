@@ -11,9 +11,10 @@ services:
       - "8000:8000"
     volumes:
       - ../:/usr/src/app/
+      - ../../django-generator:/usr/src/testing/
 
     environment:
-      DJANGO_SETTINGS_MODULE: 'django_starterkit.docker'
+      DJANGO_SETTINGS_MODULE: 'django_starterkit.settings'
       DEBUG: 'true'
     command: python manage.py runserver 0.0.0.0:8000
     links:
