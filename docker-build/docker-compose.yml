@@ -11,6 +11,7 @@ services:
       - "8000:8000"
     volumes:
       - ../:/usr/src/app/
+      - /usr/src/app/node_modules/
 
     environment:
       DJANGO_SETTINGS_MODULE: 'django_starterkit.settings'
