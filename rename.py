@@ -1,7 +1,7 @@
 import os
-from os import makedirs, rename
 from os import remove, close
-from os.path import join, expanduser, isfile, exists
+from os import rename
+from os.path import join, isfile
 from shutil import move
 from subprocess import call
 from tempfile import mkstemp

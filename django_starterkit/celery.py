@@ -1,16 +1,12 @@
 from __future__ import absolute_import, unicode_literals
-import os
 
-import datetime
+import os
 
 import pymysql
 from celery import Celery
 from celery.utils.log import get_task_logger
+
 # set the default Django settings module for the 'celery' program.
-from django.conf import settings
-from django.core.urlresolvers import reverse
-from django.db.models import Q
-from django.utils import timezone
 
 pymysql.install_as_MySQLdb()
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_starterkit.common')
