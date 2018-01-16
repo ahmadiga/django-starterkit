@@ -1,11 +1,10 @@
 # django Starterkit
 A simple Django starter-kit with the basic component.
 
----
 ## Requirments
 - Docker: https://docs.docker.com/engine/installation/
 - Docker-compose: https://docs.docker.com/compose/install/
----
+
 ## Getting Started
 1. Dlone/Download the repo:
 `git clone --depth 1 https://github.com/ahmadiga/django-starterkit.git`
@@ -20,7 +19,7 @@ A simple Django starter-kit with the basic component.
 6. Migrate DB
 `docker-compose.exe exec server python manage.py migrate`
 7. All done,open your browser and navigate to `http://localhost:8000/`
----
+
 ## What's included
 1. Django 2.0.1: https://docs.djangoproject.com/en/2.0/
 2. Django Channels 1.1.8: https://channels.readthedocs.io/en/1.1.8/
