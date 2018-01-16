@@ -4,16 +4,15 @@
 {% block base_content %}
 
 
-    <div class="container">
-        {% include "layout/tools/header.html" %}
+    {% include "layout/tools/header.html" %}
 
+    <main role="main">
         {% block layout_content %}
 
         {% endblock %}
-        {% include "layout/tools/footer.html" %}
+    </main>
+    {% include "layout/tools/footer.html" %}
 
-    </div>
-    <!-- /container -->
 
 
 {% endblock %}

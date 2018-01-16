@@ -1,4 +1,4 @@
 [pep8]
 ignore=E501
 max_line_length=180
-exclude=settings,migrations,bower_components,venv
+exclude=settings,migrations,bower_components,venv,node_modules

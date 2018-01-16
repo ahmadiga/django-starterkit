@@ -10,7 +10,7 @@ from tempfile import mkstemp
 def replace_djang_base(path, project_name):
     for dirname in os.listdir(path):
         try:
-            if dirname not in [".sass-cache", "bower_components", ".git", "db.sqlite3", "migrations"]:
+            if dirname not in [".sass-cache", "bower_components", "node_modules", ".git", "db.sqlite3", "migrations"]:
                 if isfile(join(path, dirname)):
                     replace(join(path, dirname), "django_starterkit", project_name)
                 else:

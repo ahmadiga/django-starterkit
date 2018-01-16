@@ -43,7 +43,6 @@ INSTALLED_APPS = [
 INSTALLED_APPS += [
     "main",
     "compressor",
-    'djangobower',
     'crispy_forms',
     'channels',
     'django_generator',
@@ -131,21 +130,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
-
+NPM_EXECUTABLE_PATH = 'npm'
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'djangobower.finders.BowerFinder',
+    'npm.finders.NpmFinder',
     'compressor.finders.CompressorFinder',
 )
-BOWER_COMPONENTS_ROOT = BASE_DIR + '/'
-BOWER_PATH = 'bower'
-BOWER_INSTALLED_APPS = (
-    'bootstrap#3.3.6',
-    'jquery#2.2.3',
-)
 COMPRESS_PRECOMPILERS = (
-    ('text/scss', 'sass --scss --compass {infile} {outfile}'),
+    ('text/scss', 'node_modules/node-sass/bin/node-sass {infile} {outfile}'),
 )
 COMPRESS_URL = "/static/"
 
