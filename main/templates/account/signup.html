@@ -1,0 +1,23 @@
+{% extends "account/registration_base.html" %}
+{% load i18n %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}
+    {% trans "Register for an account" %}
+{% endblock %}
+{% block registration_content %}
+
+    <p class="login-box-msg">Register a new membership</p>
+
+    <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+        {% csrf_token %}
+        {{ form|crispy }}
+        {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+        {% endif %}
+        <button type="submit" class="btn btn-primary btn-block btn-flat">{% trans "Sign Up" %} &raquo;</button>
+    </form>
+
+    <a href="{{ login_url }}" class="text-center">I already have a membership</a>
+{% endblock %}
+

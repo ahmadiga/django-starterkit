@@ -1,0 +1,26 @@
+version: '2'
+services:
+  server:
+    build:
+      context: ../
+      args:
+        settings: 'django_starterkit.settings'
+    expose:
+      - "8000"
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../:/usr/src/app/
+
+    environment:
+      DJANGO_SETTINGS_MODULE: 'django_starterkit.docker'
+      DEBUG: 'true'
+    command: python manage.py runserver 0.0.0.0:8000
+    links:
+      - redis
+
+  redis:
+    image: redis:2.8.19
+    hostname: redis
+    expose:
+      - "6379"
