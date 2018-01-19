@@ -16,9 +16,7 @@ A simple Django starter-kit with the basic component.
 `docker-compose up -d`
 5. Migrate DB
 `docker-compose.exe exec server python manage.py migrate`
-6. Migrate DB
-`docker-compose.exe exec server python manage.py migrate`
-7. All done,open your browser and navigate to `http://localhost:8000/`
+6. All done,open your browser and navigate to `http://localhost:8000/`
 
 ## What's included
 1. Django 2.0.1: https://docs.djangoproject.com/en/2.0/
