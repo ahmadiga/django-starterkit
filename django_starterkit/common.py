@@ -52,7 +52,6 @@ INSTALLED_APPS += [
     'allauth.socialaccount',
     # 'allauth.socialaccount.providers.facebook',
     'anymail',
-    'django_celery_beat',
 ]
 
 # Django debug toolbar settings

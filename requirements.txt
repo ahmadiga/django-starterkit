@@ -17,7 +17,6 @@ Django==2.0.1
 django-allauth==0.34.0
 django-anymail==1.2
 django-appconf==1.0.2
-django-celery-beat==1.1.0
 django-compressor==2.2
 django-crispy-forms==1.7.0
 django-debug-toolbar==1.9.1
@@ -33,7 +32,6 @@ kombu==4.1.0
 msgpack-python==0.5.1
 oauthlib==2.0.6
 posix-ipc==1.0.3
-PyMySQL==0.8.0
 python-memcached==1.59
 python3-openid==3.1.0
 pytz==2017.3

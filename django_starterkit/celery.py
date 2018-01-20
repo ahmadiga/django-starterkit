@@ -2,13 +2,11 @@ from __future__ import absolute_import, unicode_literals
 
 import os
 
-import pymysql
 from celery import Celery
 from celery.utils.log import get_task_logger
 
 # set the default Django settings module for the 'celery' program.
 
-pymysql.install_as_MySQLdb()
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_starterkit.common')
 
 app = Celery('django_starterkit')

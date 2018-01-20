@@ -1,17 +1,21 @@
 version: '2'
 services:
-  server:
+  common_server:
     build:
       context: ../
       args:
         settings: 'django_starterkit.settings'
+    volumes:
+      - ../:/usr/src/app/
+      - /usr/src/app/node_modules/
+
+  server:
+    extends:
+      service: common_server
     expose:
       - "8000"
     ports:
       - "8000:8000"
-    volumes:
-      - ../:/usr/src/app/
-      - /usr/src/app/node_modules/
 
     environment:
       DJANGO_SETTINGS_MODULE: 'django_starterkit.settings'
@@ -25,3 +29,13 @@ services:
     hostname: redis
     expose:
       - "6379"
+
+  celery-beat:
+    extends:
+      service: common_server
+    command: celery -A django_starterkit beat -l info
+
+  celery-worker:
+    extends:
+      service: common_server
+    command: celery -A django_starterkit worker -l info
