@@ -16,11 +16,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, '../statics')
 # channels settings
 CHANNEL_LAYERS = {
     "default": {
-        "BACKEND": "asgiref.inmemory.ChannelLayer",
-        "ROUTING": "main.routing.channel_routing",
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("redis", 6379)],
+        },
     },
 }
-
 # ANYMAIL : mailgun configuration
 ANYMAIL = {
     "MAILGUN_API_KEY": "< your api key at mailgun >",

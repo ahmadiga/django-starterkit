@@ -187,3 +187,4 @@ if DEBUG_TOOLBAR_ENABLED:
         "SHOW_COLLAPSED": True,
     }
 LOGIN_REDIRECT_URL = '/'
+ASGI_APPLICATION = "main.routing.application"
