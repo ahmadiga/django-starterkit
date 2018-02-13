@@ -62,6 +62,7 @@ if DEBUG_TOOLBAR_ENABLED:
 
 # my apps
 INSTALLED_APPS += [
+    'django_channels_notifications',
 ]
 
 MIDDLEWARE = [
@@ -187,3 +188,4 @@ if DEBUG_TOOLBAR_ENABLED:
         "SHOW_COLLAPSED": True,
     }
 LOGIN_REDIRECT_URL = '/'
+ASGI_APPLICATION = "main.routing.application"

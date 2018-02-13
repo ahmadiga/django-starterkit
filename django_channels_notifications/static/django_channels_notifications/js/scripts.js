@@ -1,0 +1,1 @@
+var exampleSocket = new WebSocket("ws://" + window.websocket_url + "/ws/django_channels_notifications/");
