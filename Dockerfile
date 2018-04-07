@@ -4,8 +4,8 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 RUN apt-get install nodejs -y
-COPY requirements.txt /usr/src/app/
-RUN pip install -r requirements.txt
+COPY requirements/ /usr/src/app/requirements/
+RUN pip install -r requirements/common.txt  -r requirements/jenkins.txt
 COPY . /usr/src/app
 RUN npm install
 RUN python manage.py collectstatic --settings=$settings --noinput

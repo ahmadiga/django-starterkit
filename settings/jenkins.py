@@ -1,5 +1,5 @@
 try:
-    from django_starterkit.common import *
+    from settings.common import *
 except ImportError:
     pass
 
@@ -22,6 +22,10 @@ CHANNEL_LAYERS = {
         },
     },
 }
+
+INSTALLED_APPS += [
+    "django_jenkins"
+]
 # ANYMAIL : mailgun configuration
 ANYMAIL = {
     "MAILGUN_API_KEY": "< your api key at mailgun >",
@@ -29,3 +33,15 @@ ANYMAIL = {
 }
 EMAIL_BACKEND = "anymail.backends.mailgun.MailgunBackend"
 DEFAULT_FROM_EMAIL = " <<your default from email>>"
+FIREBASE_API_KEY = "AIzaSyD1ikAuTBi0nJB21E22PHMHZTjuE9nXxS0"
+
+JENKINS_TASKS = (
+    'django_jenkins.tasks.run_pep8',
+    'django_jenkins.tasks.run_pylint',
+)
+PYLINT_RCFILE = "pylintrc"
+PROJECT_APPS = [
+    'main',
+
+]
+PEP8_RCFILE = ".pep8"

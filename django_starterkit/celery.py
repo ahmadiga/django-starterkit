@@ -7,7 +7,7 @@ from celery.utils.log import get_task_logger
 
 # set the default Django settings module for the 'celery' program.
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'django_starterkit.common')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'settings.settings')
 
 app = Celery('django_starterkit')
 
