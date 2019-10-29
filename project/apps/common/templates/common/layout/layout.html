@@ -1,0 +1,14 @@
+{% extends "layout/base.html" %}
+{% load i18n %}
+
+{% block base_content %}
+
+    {% include "layout/header.html" %}
+
+    <main role="main">
+        {% block content %}
+
+        {% endblock %}
+    </main>
+    {% include "layout/footer.html" %}
+{% endblock %}

@@ -1,9 +1,17 @@
-FROM python:3.6
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
-RUN apt-get install nodejs -y
-COPY requirements/ /usr/src/app/requirements/
-RUN pip install -r requirements/common.txt  -r requirements/jenkins.txt
-COPY . /usr/src/app
-RUN npm install
+FROM python:3.7.3
+
+RUN apt-get update && apt-get install -y gettext xmlsec1 && \
+    pip install --upgrade pip poetry
+
+WORKDIR /app
+
+COPY pyproject.toml pyproject.toml
+
+RUN poetry config settings.virtualenvs.create false && poetry install
+
+COPY . /app
+
+ENTRYPOINT ["/app/docker/entry"]
+CMD ["runserver"]
+
+

@@ -1,0 +1,25 @@
+version: '2'
+services:
+  server:
+    image: django_starterkit
+    container_name: server
+    command: ["runserver"]
+    environment:
+      DATABASE_URL: "postgres://postgres@postgres/django_starterkit"
+      ENVIRONMENT: local
+    expose:
+      - "8000"
+    ports:
+      - "8000:8000"
+    external_links:
+     - redis:redis
+     - postgres:postgres
+  celery:
+    image: django_starterkit
+    container_name: celery
+    command: ["celery", "-B"]
+    environment:
+      DATABASE_URL: "postgres://postgres@postgres/django_starterkit"
+    external_links:
+      - redis:redis
+      - postgres:postgres

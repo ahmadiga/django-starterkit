@@ -1,0 +1,20 @@
+version: '2'
+services:
+  postgres:
+    image: postgres:11.5
+    hostname: postgres
+    container_name: postgres
+    environment:
+      POSTGRES_DB: django_starterkit
+    ports:
+      - 5432:5432
+    expose:
+      - 5432
+#    volumes:
+#      - ./data-test/pgdata:/var/lib/postgresql/data
+  redis:
+    image: redis:2.8.19
+    hostname: redis
+    container_name: redis
+    expose:
+      - "6379"

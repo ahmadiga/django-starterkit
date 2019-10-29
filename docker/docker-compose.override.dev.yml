@@ -1,0 +1,11 @@
+version: '2'
+services:
+  server:
+    volumes:
+      - ../:/app/
+    environment: 
+      DATABASE_URL: "postgres://postgres@postgres/django_starterkit"
+      ENVIRONMENT: local
+  celery:
+    volumes:
+    - ../:/app/
