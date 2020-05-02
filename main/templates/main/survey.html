@@ -1,0 +1,60 @@
+{% extends "main/layout/layout.html" %} {% load i18n %} {% block content %}
+<!-- Main jumbotron for a primary marketing message or call to action -->
+
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-3">Survey</h1>
+  </div>
+</div>
+
+<div class="container">
+  <!-- Example row of columns -->
+  <div class="row">
+    <div class="col-md-4">
+      <form id="survey_form" method="post" action="{% url 'survey' %}">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            name="name"
+            class="form-control"
+            placeholder="Enter Name"
+            id="name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input
+            name="phone"
+            type="phone"
+            class="form-control"
+            placeholder="Enter Phone"
+            id="phone"
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            class="form-control"
+            placeholder="Enter Email"
+            id="email"
+          />
+        </div>
+
+     
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      {% comment %} {% for s in survey %}
+        {{ s.name }} - {{ s.email }} - {{ s.phone }} - {{ s.sports }}
+      {% endfor %} {% endcomment %}
+    </div>
+  </div>
+
+  <hr />
+</div>
+<!-- /container -->
+
+{% endblock %}
