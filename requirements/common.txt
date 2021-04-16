@@ -5,7 +5,7 @@ django-allauth==0.38.0
 django-anymail==6.0
 django-compressor==2.2
 django-crispy-forms==1.7.2
-django-debug-toolbar==1.11
+django-debug-toolbar==1.11.1
 django-generator==0.1
 django-npm==1.0.0
 django-parsley==0.7
