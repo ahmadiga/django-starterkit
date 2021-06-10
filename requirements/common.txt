@@ -1,6 +1,6 @@
 celery==4.2.1
 channels==2.1.7
-Django==2.1.7
+Django==2.2.24
 django-allauth==0.38.0
 django-anymail==6.0
 django-compressor==2.2
